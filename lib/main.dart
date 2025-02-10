@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/home_content/home_screen.dart';
 import 'package:movies_app/home_content/tabs/home_tab.dart';
+import 'package:movies_app/screens/intro_screen.dart';
+import 'package:movies_app/screens/onboarding_screen.dart';
 
 import 'home_content/tabs/search_tab.dart';
 import 'home_content/tabs/explore_tab.dart';
@@ -18,13 +20,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
+        IntroScreen.routeName: (context) => IntroScreen(),
+        OnboardingScreen.routeName: (context) => OnboardingScreen(),
+
         HomeScreen.routeName: (context) => HomeScreen(),
-        // HomeTab.routeName: (context) => HomeTab(),
-        // SearchTab.routeName: (context) => SearchTab(),
-        // WatchedTab.routeName: (context) => WatchedTab(),
-        // SuggestedTab.routeName: (context) => SuggestedTab(),
+
       },
-      initialRoute: HomeScreen.routeName,
+      initialRoute: IntroScreen.routeName,
     );
   }
 }

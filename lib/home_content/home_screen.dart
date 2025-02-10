@@ -18,35 +18,53 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey,
-      body: tabs[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          type: BottomNavigationBarType.shifting,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.yellow,
-          showUnselectedLabels: true,
-          onTap: (value) {
-            currentIndex = value;
-            setState(() {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFF121312),
+        body: tabs[currentIndex],
+      
+        bottomNavigationBar: Container(
+          margin: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Color(0xFF282A28),
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                buildNavItem(Icons.home_outlined, 0),
+                buildNavItem(Icons.search, 1),
+                buildNavItem(Icons.explore, 2),
+                buildNavItem(Icons.account_circle_outlined, 3),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined, size: 32), label: 'menu'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search, size: 32), label: 'search'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.explore, size: 32), label: 'explore'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.account_circle_outlined,
-                  size: 32,
-                ),
-                label: 'profile'),
-          ]),
+  Widget buildNavItem(IconData icon, int index) {
+    return IconButton(
+      icon: Icon(
+        icon,
+        size: 32,
+        color: currentIndex == index ? Color(0xFFF6BD00) : Colors.white,
+      ),
+      onPressed: () {
+        setState(() {
+          currentIndex = index;
+        });
+      },
     );
   }
 
