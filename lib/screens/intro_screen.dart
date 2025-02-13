@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/theme/app_colors.dart';
+import 'package:movies_app/theme/app_image.dart';
+import 'package:movies_app/theme/app_style.dart';
 
 import 'onboarding_screen.dart';
 
@@ -9,12 +12,15 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height=MediaQuery.of(context).size.height;
+    var width=MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/onboarding-1.png',
+              AppImage.onBoarding1,
               fit: BoxFit.cover,
             ),
           ),
@@ -39,18 +45,14 @@ class IntroScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 40, right: 16, left: 16),
+              padding:  EdgeInsets.only(bottom: height*.05, right: width*.03, left:width*.03,),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     'Find Your Next\nFavorite Movie Here',
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 36,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
+                    style: AppStyle.medium36White
                   ),
                   const SizedBox(
                     height: 10,
@@ -58,12 +60,7 @@ class IntroScreen extends StatelessWidget {
                   Text(
                     'Get access to a huge library of movies \nto suit all tastes. You will surely like it.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFFFFFFFF)
-                          .withOpacity(.6),
-                    ),
+                    style: AppStyle.regular20Whitetrans
                   ),
                   const SizedBox(
                     height: 16,
@@ -79,17 +76,13 @@ class IntroScreen extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 20),
-                          backgroundColor: Color(0xFFF6BD00),
+                          backgroundColor: AppColors.yellowColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),),
                       child: Text(
                         'Explore Now',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black,
-                        ),
+                        style: AppStyle.bold20Black
                       ),
                     ),
                   ),
