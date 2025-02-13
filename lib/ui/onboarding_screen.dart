@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:movies_app/theme/app_colors.dart';
-import 'package:movies_app/theme/app_image.dart';
-import 'package:movies_app/theme/app_style.dart';
 
-import '../ui/home_screen/home_screen.dart';
+import 'home_screen/home_screen.dart';
 
 
 class OnboardingScreen extends StatefulWidget {
@@ -20,40 +17,34 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<Map<String, String>> onboardingData = [
     {
-      "image": AppImage.onBoarding2,
-      "title": "Discover Movies",
-      "description":
-          "Explore a vast collection of movies in all qualities and genres."
-              " Find your next favorite film with ease."
-              ,
-    },
-    {
-      "image":AppImage.onBoarding3 ,
+      "image": "assets/images/onboarding-2.png",
       "title": "Explore All Genres",
       "description":
-          "Discover movies from every genre, in all available qualities."
-              " Find something new and exciting to watch every day"
-      ,
+          "Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.",
     },
     {
-      "image": AppImage.onBoarding4,
+      "image": "assets/images/onboarding-3.png",
       "title": "Create Watchlists",
       "description":
-          "Save movies to your watchlist to keep track of what you want to watch next. "
-              "enjoy films in various qualities and genres. "
-             ,
+          "Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.",
     },
     {
-      "image": AppImage.onBoarding5,
+      "image": "assets/images/onboarding-4.png",
       "title": "Rate, Review, and Learn",
       "description":
           "Share your thoughts on the movies you’ve watched. Dive deep into film details and help others discover great movies with your reviews.",
     },
     {
-      "image": AppImage.onBoarding6,
-      "title": "Start Watching Now",
-      "description":""
-
+      "image": "assets/images/onboarding-5.png",
+      "title": "Rate, Review, and Learn",
+      "description":
+          "Share your thoughts on the movies you’ve watched. Dive deep into film details and help others discover great movies with your reviews.",
+    },
+    {
+      "image": "assets/images/onboarding-6.png",
+      "title": "Rate, Review, and Learn",
+      "description":
+          "Share your thoughts on the movies you’ve watched. Dive deep into film details and help others discover great movies with your reviews.",
     },
   ];
 
@@ -77,10 +68,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var height=MediaQuery.of(context).size.height;
-    var width=MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: AppColors.blackColor,
+      backgroundColor: Colors.black,
       body: PageView.builder(
         controller: _pageController,
         itemCount: onboardingData.length,
@@ -98,30 +87,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   fit: BoxFit.fill,
                 ),
               ),
-              Positioned.fill(
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.transparent, // Transparent at the top
-                        Colors.black.withOpacity(0.7), // Darker at the bottom
-                      ],
-                      stops: [0.5, 1.0], // Adjust stops for the gradient effect
-                    ),
-                  ),
-                ),
-              ),
+
+
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  padding:  EdgeInsets.all(height*.02),
+                  height: 320,
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: AppColors.blackColor,
+                    color: Colors.black.withOpacity(0.8),
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
                     ),
                   ),
                   child: Column(
@@ -130,16 +107,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       Text(
                         onboardingData[index]["title"]!,
                         textAlign: TextAlign.center,
-                        style:AppStyle.bold20White,
-
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                       SizedBox(height: height*.01),
+                      const SizedBox(height: 10),
                       Text(
                         onboardingData[index]["description"]!,
                         textAlign: TextAlign.center,
-                        style: AppStyle.regular20White,
+                        style: TextStyle(color: Colors.white70),
                       ),
-                      SizedBox(height: height*.01),
+                      const SizedBox(height: 20),
+
+
+
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -157,12 +140,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   : _nextPage,
                               style: ElevatedButton.styleFrom(
                                   padding: EdgeInsets.symmetric(vertical: 20),
-                                  backgroundColor: AppColors.yellowColor,
+                                  backgroundColor: Color(0xFFF6BD00),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16),
                                   )),
                               child: Text(
-                                  _currentIndex == onboardingData.length - 1 ? "Finish" : "Next",style: AppStyle.semi20Black,),
+                                  _currentIndex == onboardingData.length - 1 ? "Finish" : "Next"),
                             ),
                           ),
                           if (_currentIndex > 0) SizedBox(height: 10),
@@ -175,13 +158,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 style: OutlinedButton.styleFrom(
                                     padding: EdgeInsets.symmetric(vertical: 20),
 
-                                    foregroundColor:AppColors.yellowColor,
-                                  side: BorderSide(color:AppColors.yellowColor),
+                                    foregroundColor:Color(0xFFF6BD00),
+                                  side: BorderSide(color:Color(0xFFF6BD00)),
                                   shape:  RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16),
                                   )
                                 ),
-                                child: Text("Back",style: AppStyle.semi20Yellow,),
+                                child: Text("Back"),
                               ),
                             ),
                         ],
