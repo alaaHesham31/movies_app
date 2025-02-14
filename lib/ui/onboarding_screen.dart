@@ -5,6 +5,7 @@ import 'package:movies_app/theme/app_image.dart';
 import 'package:movies_app/theme/app_style.dart';
 
 import '../ui/home_screen/home_screen.dart';
+import 'auth/login/login_screen.dart';
 
 
 class OnboardingScreen extends StatefulWidget {
@@ -151,7 +152,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   ? () {
                                 Navigator.pushReplacementNamed(
                                   context,
-                                  HomeScreen.routeName,
+                                  LoginScreen.routeName,
                                 );
                               }
                                   : _nextPage,
