@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/theme/app_image.dart';
 import 'package:movies_app/theme/app_style.dart';
+import 'package:movies_app/ui/auth/forgot_password/forgot_password_screen.dart';
 
 import '../../../theme/app_colors.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/cutom_button.dart';
 import '../../widgets/language_toggle_switch.dart';
+import '../regist/regist_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = 'login_screen';
@@ -42,7 +44,12 @@ class LoginScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(
+                      context,
+                      ForgotPasswordScreen.routeName,
+                    );
+                  },
                   child: Text(
                     "Forget Password?",
                     style: AppStyle.regular14Yellow,
@@ -57,6 +64,7 @@ class LoginScreen extends StatelessWidget {
                 color: AppColors.yellowColor,
                 onPressed: () {
                   // Login action
+
                 },
               ),
               SizedBox(
@@ -64,6 +72,10 @@ class LoginScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    RegisterScreen.routeName,
+                  );
                 },
                 child: Text.rich(
                   textAlign: TextAlign.center,
@@ -116,7 +128,7 @@ class LoginScreen extends StatelessWidget {
               CustomButton(
                 text: "Login With Google",
                 color: AppColors.yellowColor,
-                assetImage: AppImage.google_icon,
+                assetImage: AppImage.googleIcon,
                 isLeading: true,
                 onPressed: () {},
               ),

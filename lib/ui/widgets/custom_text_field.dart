@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/theme/app_colors.dart';
+import 'package:movies_app/theme/app_style.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hintText;
@@ -29,7 +30,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       obscureText: widget.isPassword ? _obscureText : false,
       decoration: InputDecoration(
         hintText: widget.hintText,
-        hintStyle: TextStyle(color: AppColors.whiteColorTrans),
+        hintStyle: AppStyle.medium16White,
         prefixIcon: Icon(widget.icon, color: Colors.white),
         suffixIcon: widget.isPassword
             ? IconButton(

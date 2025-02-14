@@ -51,12 +51,12 @@ class _LanguageToggleSwitchState extends State<LanguageToggleSwitch> {
             Positioned(
               left: 2,
               top: 2,
-              child: Image.asset(AppImage.usa_flag, width: 40, height: 40),
+              child: Image.asset(AppImage.usaFlag, width: 40, height: 40),
             ),
             Positioned(
               right: 2,
               top: 2,
-              child: Image.asset(AppImage.egypt_flag, width: 40, height: 40),
+              child: Image.asset(AppImage.egyptFlag, width: 40, height: 40),
             ),
           ],
         ),
