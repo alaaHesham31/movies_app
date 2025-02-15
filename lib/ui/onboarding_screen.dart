@@ -4,7 +4,9 @@ import 'package:movies_app/theme/app_colors.dart';
 import 'package:movies_app/theme/app_image.dart';
 import 'package:movies_app/theme/app_style.dart';
 
-import '../home_content/home_screen.dart';
+import '../ui/home_screen/home_screen.dart';
+import 'auth/login/login_screen.dart';
+
 
 class OnboardingScreen extends StatefulWidget {
   static const String routeName = 'onboarding';
@@ -24,31 +26,31 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       "image": AppImage.onBoarding2,
       "title": "Discover Movies",
       "description":
-          "Explore a vast collection of movies in all qualities and genres."
-              " Find your next favorite film with ease."
-              ,
+      "Explore a vast collection of movies in all qualities and genres."
+          " Find your next favorite film with ease."
+      ,
     },
     {
       "image":AppImage.onBoarding3 ,
       "title": "Explore All Genres",
       "description":
-          "Discover movies from every genre, in all available qualities."
-              " Find something new and exciting to watch every day"
+      "Discover movies from every genre, in all available qualities."
+          " Find something new and exciting to watch every day"
       ,
     },
     {
       "image": AppImage.onBoarding4,
       "title": "Create Watchlist",
       "description":
-          "Save movies to your watchlist to keep track of what you want to watch next. "
-              "enjoy films in various qualities and genres. "
-             ,
+      "Save movies to your watchlist to keep track of what you want to watch next. "
+          "enjoy films in various qualities and genres. "
+      ,
     },
     {
       "image": AppImage.onBoarding5,
       "title": "Rate, Review, and Learn",
       "description":
-          "Share your thoughts on the movies you’ve watched. Dive deep into film details and help others discover great movies with your reviews.",
+      "Share your thoughts on the movies you’ve watched. Dive deep into film details and help others discover great movies with your reviews.",
     },
     {
       "image": AppImage.onBoarding6,
@@ -134,7 +136,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         style:AppStyle.bold20White,
 
                       ),
-                       SizedBox(height: height*.01),
+                      SizedBox(height: height*.01),
                       Text(
                         onboardingData[index]["description"]!,
                         textAlign: TextAlign.center,
@@ -152,7 +154,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   ? () {
                                 Navigator.pushReplacementNamed(
                                   context,
-                                  HomeScreen.routeName,
+                                  LoginScreen.routeName,
                                 );
                               }
                                   : _nextPage,
@@ -163,7 +165,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     borderRadius: BorderRadius.circular(16),
                                   )),
                               child: Text(
-                                  _currentIndex == onboardingData.length - 1 ? "Finish" : "Next",style: AppStyle.semi20Black,),
+                                _currentIndex == onboardingData.length - 1 ? "Finish" : "Next",style: AppStyle.semi20Black,),
                             ),
                           ),
                           if (_currentIndex > 0) SizedBox(height: 10),
@@ -177,10 +179,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     padding: EdgeInsets.symmetric(vertical: 20),
 
                                     foregroundColor:AppColors.yellowColor,
-                                  side: BorderSide(color:AppColors.yellowColor),
-                                  shape:  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16),
-                                  )
+                                    side: BorderSide(color:AppColors.yellowColor),
+                                    shape:  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16),
+                                    )
                                 ),
                                 child: Text("Back",style: AppStyle.semi20Yellow,),
                               ),

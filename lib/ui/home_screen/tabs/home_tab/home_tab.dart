@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:cached_network_image/cached_network_image.dart';
+// import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:movies_app/apis/api_manager.dart';
 import 'package:movies_app/home_content/tabs/home_tab/movie_carousel.dart';
+import 'package:movies_app/models/MoviesDataResponse.dart';
+import 'package:movies_app/theme/app_colors.dart';
 import 'package:movies_app/theme/app_image.dart';
 
-import '../../models/MoviesDataResponse.dart';
-import '../../theme/app_colors.dart';
 
 class HomeTab extends StatefulWidget {
 

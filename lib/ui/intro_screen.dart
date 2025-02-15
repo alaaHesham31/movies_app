@@ -50,17 +50,17 @@ class IntroScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Find Your Next\nFavorite Movie Here',
-                    textAlign: TextAlign.center,
-                    style: AppStyle.medium36White
+                      'Find Your Next\nFavorite Movie Here',
+                      textAlign: TextAlign.center,
+                      style: AppStyle.medium36White
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
-                    'Get access to a huge library of movies \nto suit all tastes. You will surely like it.',
-                    textAlign: TextAlign.center,
-                    style: AppStyle.regular20Whitetrans
+                      'Get access to a huge library of movies \nto suit all tastes. You will surely like it.',
+                      textAlign: TextAlign.center,
+                      style: AppStyle.regular20Whitetrans
                   ),
                   const SizedBox(
                     height: 16,
@@ -75,14 +75,14 @@ class IntroScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          backgroundColor: AppColors.yellowColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),),
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        backgroundColor: AppColors.yellowColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),),
                       child: Text(
-                        'Explore Now',
-                        style: AppStyle.bold20Black
+                          'Explore Now',
+                          style: AppStyle.bold20Black
                       ),
                     ),
                   ),
