@@ -1,20 +1,12 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/ui/auth/forgot_password/forgot_password_screen.dart';
-import 'package:movies_app/ui/auth/login/login_screen.dart';
-import 'package:movies_app/ui/auth/regist/regist_screen.dart';
+
 import 'package:movies_app/ui/home_screen/home_screen.dart';
 import 'package:movies_app/ui/intro_screen.dart';
 import 'package:movies_app/ui/onboarding_screen.dart';
 
-import 'firebase_options.dart';
 
 
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+void main() {
   runApp(const MyApp());
 }
 
@@ -28,10 +20,6 @@ class MyApp extends StatelessWidget {
       routes: {
         IntroScreen.routeName: (context) => IntroScreen(),
         OnboardingScreen.routeName: (context) => OnboardingScreen(),
-        LoginScreen.routeName: (context) => LoginScreen(),
-        RegisterScreen.routeName: (context) => RegisterScreen(),
-        ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
-
 
         HomeScreen.routeName: (context) => HomeScreen(),
 

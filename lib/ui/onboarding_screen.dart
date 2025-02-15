@@ -11,6 +11,8 @@ import 'auth/login/login_screen.dart';
 class OnboardingScreen extends StatefulWidget {
   static const String routeName = 'onboarding';
 
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -38,7 +40,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     },
     {
       "image": AppImage.onBoarding4,
-      "title": "Create Watchlists",
+      "title": "Create Watchlist",
       "description":
       "Save movies to your watchlist to keep track of what you want to watch next. "
           "enjoy films in various qualities and genres. "
